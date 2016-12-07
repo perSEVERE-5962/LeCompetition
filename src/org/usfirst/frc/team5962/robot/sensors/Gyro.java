@@ -8,11 +8,11 @@ public class Gyro {
 	final int gyroChannel = 0;
 	double angleSetPoint = 0.0;
 	final double gyroSpeedConstant = 0.006;
-	
-	public Gyro(){
+
+	public Gyro() {
 		robotGyro = new ADXRS450_Gyro();
 	}
-	
+
 	public void resetGyro() {
 		robotGyro.reset();
 	}
@@ -20,7 +20,7 @@ public class Gyro {
 	public void calibrateGyro() {
 		robotGyro.calibrate();
 	}
-	
+
 	public double getGyroAngle() {
 		SmartDashboard.putString("Gyro Angle", "" + robotGyro.getAngle());
 		return robotGyro.getAngle();
@@ -30,23 +30,5 @@ public class Gyro {
 	public double getTurningValue() {
 		return (angleSetPoint - robotGyro.getAngle()) * gyroSpeedConstant;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
